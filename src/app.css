@@ -26,7 +26,12 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: Josefin Sans;
     font-weight: 300;
+    font-size: 2rem;
     text-transform: uppercase;
+}
+
+p {
+    line-height: 1.7rem;
 }
 
 a:hover {
@@ -34,7 +39,6 @@ a:hover {
     background-position: bottom center;
     background-size: 50% 2px;
     background-repeat: no-repeat;
-    padding-bottom: .5rem;
 
 }
 
@@ -42,7 +46,16 @@ body {
     background-color: var(--White);
 }
 
+footer a,
 nav a{
     color: var(--White);
     text-decoration: none;
+    padding-bottom: .5rem;
+
+}
+
+@media screen and (min-width:700px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 3.5rem;
+    }
 }
