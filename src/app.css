@@ -57,6 +57,7 @@ nav a{
 
 button {
     background: none;
+    border: solid var(--Black);
     cursor: pointer;
     width: fit-content;
     height: fit-content;
