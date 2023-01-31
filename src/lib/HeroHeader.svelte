@@ -18,42 +18,44 @@
     }
 </script>
 
-<img src="./img/{mode}/image-hero.jpg" alt="" class="hero-img">
-<div class="hero-content">
-    <nav class="topnav">
-        <img src="{logo}" alt="Loopstudios Logo">
-        {#if mode == 'desktop' || opened}
-            <ul class="nav-links {opened ? 'opened' : ''}">
-                <li><a href="/">About</a></li>
-                <li><a href="/">Careers</a></li>
-                <li><a href="/">Events</a></li>
-                <li><a href="/">Products</a></li>
-                <li><a href="/">Support</a></li>
-            </ul>
-        {/if}    
-        {#if mode == 'mobile'}
-            <div class="menu-btn {opened ? 'hidden' : ''}" on:click={menuOpen}>
-                <img src="{hamburger}" alt="">
-            </div>
-            <div class="close-menu-btn {opened ? '' : 'hidden'}" on:click={menuClose}>
-                <img src="{close}" alt="">
-            </div>
-        {/if}
-        
-    </nav>
-    <div class="hero-tagline">
-        <h1>Immersive experiences that deliver</h1>
+    <img src="./img/{mode}/image-hero.jpg" alt="" class="hero-img">
+    <div class="hero-content">
+        <nav class="topnav">
+            <img src="{logo}" alt="Loopstudios Logo" class="logo">
+            {#if mode == 'desktop' || opened}
+                <ul class="nav-links {opened ? 'opened' : ''}">
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Careers</a></li>
+                    <li><a href="/">Events</a></li>
+                    <li><a href="/">Products</a></li>
+                    <li><a href="/">Support</a></li>
+                </ul>
+            {/if}    
+            {#if mode == 'mobile'}
+                <button class="menu-btn {opened ? 'hidden' : ''}" on:click={menuOpen}>
+                    <img src="{hamburger}" alt="">
+                </button>
+                <button class="close-menu-btn {opened ? '' : 'hidden'}" on:click={menuClose}>
+                    <img src="{close}" alt="">
+                </button>
+            {/if}
+            
+        </nav>
+        <div class="hero-tagline">
+            <h1>Immersive experiences that deliver</h1>
+        </div>
     </div>
-</div>
+
 
 <style>
+    
     .hero-img {
-        position: relative;
-        width: 100vw;
+        
+        width: 100%;
     }
     .hero-content {
         position: absolute;
-        top: 2rem;
+        top: 4rem;
         left: 0;
         right: 0;
         bottom: 0;
@@ -67,6 +69,16 @@
     }
     .topnav *{
         z-index: 2;
+    }
+    .topnav button {
+        padding: 0;
+        border: none;
+    }
+    .topnav button:hover {
+        background: none;
+    }
+    .topnav .logo {
+        width: 45%;
     }
     .nav-links {
         display: none;
@@ -103,14 +115,18 @@
         transform: translateY(-50%);
         
         color: var(--White);
-        border: solid;
+        border: solid .15rem;
     }
     .hero-tagline h1 {
         font-size: 11vw;
         line-height: 11vw;
-        padding: 2vw;
+        padding: 6vw;
     }
     @media screen and (min-width:700px) {
+        .hero-img {
+            filter: brightness(70%);
+            -webkit-filter: brightness(70%);
+        }
         .hero-content {
             margin: 0 var(--sides-desktop);
         }
@@ -122,6 +138,10 @@
             font-size: 5.5vw;
             line-height: 5.5vw;
             padding: 2vw;
+        }
+
+        .topnav .logo {
+            width: auto;
         }
 
         .menu-btn {

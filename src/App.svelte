@@ -80,9 +80,9 @@
 
     <div class="socials">
         <a href="/"><img src="{facebook}" alt="Facebook icon"></a>
-        <a href="/"><img src="{instagram}" alt="Instagram icon"></a>
-        <a href="/"><img src="{pinterest}" alt="Pinterest icon"></a>
         <a href="/"><img src="{twitter}" alt="Twitter icon"></a>
+        <a href="/"><img src="{pinterest}" alt="Pinterest icon"></a>
+        <a href="/"><img src="{instagram}" alt="Instagram icon"></a>
     </div>
 
     <div class="copyright">
@@ -104,26 +104,49 @@
     main {
         display:grid;
         margin: 0 auto;
-        width: min-content;
-        padding: 5rem 0;
+        /* width: min-content; */
+        padding: 5rem 2rem;
         gap: 5rem
         /* margin: 0 var(--sides-mobile); */
     }
 
     .about-grid {
         display: grid;
-        gap: 2rem;
-        /* padding: 2rem; */
+        justify-items: center;
+        gap: 3rem;
     }
     .about-grid img {
         width: 100%;
     }
     .about-text {
         display: grid;
+        text-align: center;
+        row-gap: 1.5rem;
+        padding: 0 1rem;
         background-color: var(--White);
     }
 
+    .creation-grid {
+        display: grid;
+        /* justify-content: center; */
+        justify-items: center;
+        grid-template-areas:
+            "title"
+            "cards"
+            "button";
+        row-gap: 3rem;
+    }
+    .creation-grid h1 {
+        grid-area: title;
+    }
+    .creation-grid button {
+        grid-area: button;
+        /* place-self: center; */
+    }
     .cards {
+        grid-area: cards;
+        place-self: stretch;
+
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -141,23 +164,42 @@
 
         color: var(--White);
         background: var(--Black);
+        padding: 2rem;
+    }
+
+    footer > * {
+        padding: 1.5rem 0;
     }
 
     .logo {
         grid-area: logo;
+        width: 10rem;
     }
     .botnav {
         grid-area: nav;
     }
     .nav-links {
         list-style: none;
+        text-align: center;
+        display: flex;
+        flex-flow: column;
+        gap: 1.5rem;
     }
     .socials {
         grid-area: socials;
+        display: flex;
+        gap: 1rem;
+        padding-bottom: 0;
     }
     .copyright {
         grid-area: copyright;
+        text-align: center;
+        color: var(--Dark-Gray);
+        padding-top: 0;
     }    
+    .attribution {
+        font-size: .7rem;
+    }
 
     @media screen and (min-width:700px) {
         main {
@@ -183,20 +225,31 @@
 
             place-content: stretch;
             place-items: end;
-            padding: 5vw 0 0 8vw
+            padding: 5vw 0 0 7.5vw;
+            text-align: left;
         }
         .about-text h1{
             font-size: 3.4vw;
         }
 
+        .creation-grid {
+            grid-template-areas:
+                "title button"
+                "cards cards";
+        }
+        .creation-grid h1 {
+            place-self: center start;
+        }
+        .creation-grid button {
+            place-self: center end;
+        }
         .cards {
             /* flex-flow: row wrap;
             gap: 1rem; */
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            /* justify-content: center; */
-            place-content: center;
-            padding: 5rem 0;
+            /* place-content: center; */
+            padding: 0 0 5rem 0;
 
         }
 
@@ -204,9 +257,28 @@
             grid-template-areas: 
             "logo socials"
             "nav copyright";
+            padding: 2rem var(--sides-desktop);
+            row-gap: 1rem;
+        }
+        footer > * {
+            padding: 0;
+        }
+        .logo {
+            justify-self: start;
+        }
+        .botnav {
+            justify-self: start;
+        }
+        .socials {
+            justify-self: end;
+        }        
+
+        .copyright {
+            justify-self: end;
+            padding: 0;
         }
         .nav-links {
-            display: flex;
+            flex-flow: row;
             gap: 2rem;
         }
     }

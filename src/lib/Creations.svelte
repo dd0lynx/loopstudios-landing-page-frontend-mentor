@@ -9,25 +9,22 @@
     
     <div bind:clientWidth={w} bind:clientHeight={h} class="card">
         <img src="./img/{mode}/{img}" alt="">
-        <div class="text-overlay">
+        <a href="/" class="text-overlay">
             <p class="card-text">{@html text}</p>
-        </div>
+        </a>
     </div>
     
     <style>
     .card {
         position: relative;
         color: var(--White);
-        background-image: var(--bg-img);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 85vw;
+        /* width: 85vw; */
         margin: 0 auto;
     }
     
     .card img {
         width: 100%;
-        height: auto;
+        height: 100%;
     }
     
     .text-overlay {
@@ -37,15 +34,13 @@
         left: 0;
         right: 0;
 
-        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.63));
+        background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.63));
     }
-
     .text-overlay:hover, .text-overlay:focus {
         background: rgba(255, 255, 255, 0.705);
-        color: var(--Black);
+        cursor: pointer;
     }
-
-
+    
     .card-text {
         position: absolute;
         margin: 0;
@@ -56,6 +51,10 @@
         font-weight: 300;
         font-size: 6vw;
         line-height: 6vw;
+        color: var(--White);
+    }
+    .text-overlay:hover > p {
+        color: var(--Black);
     }
     
     @media screen and (min-width:700px) {
@@ -67,6 +66,14 @@
             /* height: 31vw; */
         }
     
+        .text-overlay {
+            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.63));
+        }
+        .text-overlay:hover, .text-overlay:focus {
+        background: rgba(255, 255, 255, 0.705);
+        color: var(--Black);
+    }
+
         .card-text {
             left: 15%;
             bottom: 8%;
