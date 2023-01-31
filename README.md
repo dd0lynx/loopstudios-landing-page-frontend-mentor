@@ -27,8 +27,13 @@ Users should be able to:
 
 ### Screenshot
 
+Mobile (375px):
+
 ![Mobile](./Loopstudio%20Mobile%20375px.png)
-![Mobile](./Loopstudio%20Desktop%201440px.png)
+
+Desktop (1440px):
+
+![Desktop](./Loopstudio%20Desktop%201440px.png)
 
 ### Links
 
