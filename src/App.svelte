@@ -66,7 +66,7 @@
 
 <footer>
 
-    <img class="logo" src="{logo}" alt="Loopstudios Logo">
+    <img class="logo" src="./{logo}" alt="Loopstudios Logo">
 
     <nav class="botnav">
         <ul class="nav-links">

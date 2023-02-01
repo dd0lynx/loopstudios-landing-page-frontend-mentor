@@ -33,10 +33,10 @@
             {/if}    
             {#if mode == 'mobile'}
                 <button class="menu-btn {opened ? 'hidden' : ''}" on:click={menuOpen}>
-                    <img src="{hamburger}" alt="">
+                    <img src="./{hamburger}" alt="">
                 </button>
                 <button class="close-menu-btn {opened ? '' : 'hidden'}" on:click={menuClose}>
-                    <img src="{close}" alt="">
+                    <img src="./{close}" alt="">
                 </button>
             {/if}
             
