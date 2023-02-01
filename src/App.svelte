@@ -79,10 +79,10 @@
     </nav>
 
     <div class="socials">
-        <a href="/"><img src="{facebook}" alt="Facebook icon"></a>
-        <a href="/"><img src="{twitter}" alt="Twitter icon"></a>
-        <a href="/"><img src="{pinterest}" alt="Pinterest icon"></a>
-        <a href="/"><img src="{instagram}" alt="Instagram icon"></a>
+        <a href="/"><img src="./{facebook}" alt="Facebook icon"></a>
+        <a href="/"><img src="./{twitter}" alt="Twitter icon"></a>
+        <a href="/"><img src="./{pinterest}" alt="Pinterest icon"></a>
+        <a href="/"><img src="./{instagram}" alt="Instagram icon"></a>
     </div>
 
     <div class="copyright">
