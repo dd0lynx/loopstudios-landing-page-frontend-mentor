@@ -21,7 +21,7 @@
     <img src="./img/{mode}/image-hero.jpg" alt="" class="hero-img">
     <div class="hero-content">
         <nav class="topnav">
-            <img src="{logo}" alt="Loopstudios Logo" class="logo">
+            <img src="./{logo}" alt="Loopstudios Logo" class="logo">
             {#if mode == 'desktop' || opened}
                 <ul class="nav-links {opened ? 'opened' : ''}">
                     <li><a href="/">About</a></li>
